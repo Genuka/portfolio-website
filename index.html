@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Genuka</title>
+    <title>Genuka Giyon - Robotics & Electronics Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">🚀 Genuka</div>
+            <div class="nav-brand">
+                <span class="brand-icon">⚙️</span>
+                <span class="brand-text">Genuka Giyon</span>
+            </div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -18,15 +21,30 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <h1>Hi, I'm Genuka! 👋</h1>
-            <p>13 years old 🎂 | From Sri Lanka 🇱🇰 | Young Developer & Creator</p>
-            <button class="cta-button">Check Out My Stuff! 👇</button>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Genuka Giyon</h1>
+                <p class="hero-subtitle">Robotics • Electronics • AI • Embedded Systems</p>
+                <p class="hero-description">
+                    Engineering student from Sri Lanka building robotics, embedded systems, and AI applications. 
+                    Hands-on experience with Raspberry Pi, microcontrollers, computer vision, and electronics design.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View Projects</button>
+                    <a href="https://github.com/Genuka" target="_blank" class="btn btn-secondary">GitHub</a>
+                    <button class="btn btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About Me</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -34,29 +52,278 @@
     <section id="about" class="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>Hey! I'm Genuka, a 13-year-old tech enthusiast from Sri Lanka! 🌴 I love coding, building cool web projects, and learning new things every day. When I'm not coding, you can find me gaming, watching tech videos, or hanging out with friends. I'm super excited about tech and want to build amazing things in the future! 🚀</p>
+            <div class="about-content">
+                <p>
+                    I'm an engineering and technology student from Sri Lanka with a passion for robotics, embedded systems, 
+                    and artificial intelligence. I build and experiment with hardware and software across multiple domains: 
+                    robotics automation, computer vision, embedded systems programming, and electronics design.
+                </p>
+                <p>
+                    My hands-on projects span Raspberry Pi-based systems, microcontroller programming, sensor integration, 
+                    circuit design, and 3D printing. I'm particularly interested in how robotics, AI, and electronics converge 
+                    to solve real-world problems.
+                </p>
+                <p>
+                    Long-term, I'm pursuing robotics engineering, mechatronics, AI systems, and embedded systems development. 
+                    Each project I undertake builds toward these goals by developing deeper technical expertise and problem-solving skills.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2>My Cool Projects</h2>
+            <h2>Projects</h2>
+            
+            <!-- Project Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="robotics">Robotics</button>
+                <button class="filter-btn" data-filter="electronics">Electronics</button>
+                <button class="filter-btn" data-filter="ai">AI & Vision</button>
+                <button class="filter-btn" data-filter="embedded">Embedded Systems</button>
+            </div>
+
+            <!-- Projects Grid -->
             <div class="projects-grid">
-                <div class="project-card">
-                    <h3>🎮 Game Website</h3>
-                    <p>Built a super cool gaming website with HTML and CSS. Has animations, cool colors, and links to my favorite games!</p>
-                    <a href="#">View Project</a>
+                <!-- Project 1: AI + Raspberry Pi Smart Attendance Robot -->
+                <div class="project-card" data-category="robotics,ai,embedded">
+                    <div class="project-header">
+                        <h3>AI + Raspberry Pi 5 Smart Attendance Tracking Robot</h3>
+                        <span class="status-badge status-prototype">Prototype</span>
+                    </div>
+                    <p class="project-description">
+                        Autonomous robotics system using Raspberry Pi 5 and computer vision for real-time person identification 
+                        and attendance tracking. Combines embedded systems, AI, and robotics into an automated solution.
+                    </p>
+                    <div class="project-tech">
+                        <span>Raspberry Pi 5</span>
+                        <span>Python</span>
+                        <span>Computer Vision</span>
+                        <span>AI/ML</span>
+                        <span>Robotics</span>
+                        <span>Embedded Systems</span>
+                    </div>
+                    <button class="btn-expand" onclick="openProjectModal(0)">View Details</button>
                 </div>
-                <div class="project-card">
-                    <h3>🎨 Art Portfolio</h3>
-                    <p>A colorful portfolio page showcasing digital art and drawings. Learned JavaScript to make it interactive with cool hover effects!</p>
-                    <a href="#">View Project</a>
+
+                <!-- Project 2: WRO 2026 Robotics -->
+                <div class="project-card" data-category="robotics,ai">
+                    <div class="project-header">
+                        <h3>WRO 2026 - Robots Meet Culture</h3>
+                        <span class="status-badge status-in-progress">In Progress</span>
+                    </div>
+                    <p class="project-description">
+                        Competition robotics project for World Robot Olympiad 2026. Robot autonomously classifies colored tiles 
+                        on a 16-tile grid using computer vision and navigates based on detected patterns.
+                    </p>
+                    <div class="project-tech">
+                        <span>Robotics</span>
+                        <span>Computer Vision</span>
+                        <span>Autonomous Navigation</span>
+                        <span>Sensors</span>
+                        <span>Programming</span>
+                    </div>
+                    <button class="btn-expand" onclick="openProjectModal(1)">View Details</button>
                 </div>
-                <div class="project-card">
-                    <h3>🍕 Pizza Ordering App</h3>
-                    <p>Created a fun pizza ordering website using HTML, CSS, and JavaScript. You can select toppings and see the total price!</p>
-                    <a href="#">View Project</a>
+
+                <!-- Project 3: 8-Sensor Line Following Robot -->
+                <div class="project-card" data-category="robotics,embedded,electronics">
+                    <div class="project-header">
+                        <h3>8-Sensor Line Following Robot</h3>
+                        <span class="status-badge status-in-progress">In Progress</span>
+                    </div>
+                    <p class="project-description">
+                        Eight-channel IR sensor array for autonomous line detection and robot steering. Testing and control 
+                        via Raspberry Pi 5, focusing on sensor calibration and autonomous navigation algorithms.
+                    </p>
+                    <div class="project-tech">
+                        <span>IR Sensors</span>
+                        <span>Raspberry Pi 5</span>
+                        <span>Sensor Calibration</span>
+                        <span>Autonomous Navigation</span>
+                        <span>Embedded Programming</span>
+                    </div>
+                    <button class="btn-expand" onclick="openProjectModal(2)">View Details</button>
+                </div>
+
+                <!-- Project 4: Solar Panel Monitoring -->
+                <div class="project-card" data-category="electronics,embedded">
+                    <div class="project-header">
+                        <h3>Solar Panel Voltage/Current/Power Monitoring</h3>
+                        <span class="status-badge status-in-progress">In Progress</span>
+                    </div>
+                    <p class="project-description">
+                        Data acquisition system for solar panel measurements. Uses voltage dividers and current shunts with 
+                        microcontroller sensing and Python visualization for voltage, current, and power characteristics.
+                    </p>
+                    <div class="project-tech">
+                        <span>Voltage Divider</span>
+                        <span>Current Sensing</span>
+                        <span>Microcontroller</span>
+                        <span>Python</span>
+                        <span>Data Visualization</span>
+                    </div>
+                    <button class="btn-expand" onclick="openProjectModal(3)">View Details</button>
+                </div>
+
+                <!-- Project 5: 5-bit R-2R DAC -->
+                <div class="project-card" data-category="electronics">
+                    <div class="project-header">
+                        <h3>5-bit R-2R Resistor Ladder DAC</h3>
+                        <span class="status-badge status-completed">Completed</span>
+                    </div>
+                    <p class="project-description">
+                        Digital-to-analog converter implementation using R-2R resistor ladder network. 5-bit digital input 
+                        with GPIO control. Demonstrates resistor networks and analog electronics fundamentals.
+                    </p>
+                    <div class="project-tech">
+                        <span>R-2R Ladder</span>
+                        <span>DAC</span>
+                        <span>GPIO</span>
+                        <span>Analog Electronics</span>
+                        <span>Resistor Networks</span>
+                    </div>
+                    <button class="btn-expand" onclick="openProjectModal(4)">View Details</button>
+                </div>
+
+                <!-- Project 6: DHT11 Data Logger -->
+                <div class="project-card" data-category="electronics,embedded">
+                    <div class="project-header">
+                        <h3>DHT11 Temperature/Humidity Data Logger</h3>
+                        <span class="status-badge status-completed">Completed</span>
+                    </div>
+                    <p class="project-description">
+                        Environmental data acquisition system using DHT11 sensor. Microcontroller-based acquisition with 
+                        serial communication to Python for data logging and monitoring.
+                    </p>
+                    <div class="project-tech">
+                        <span>DHT11 Sensor</span>
+                        <span>Microcontroller</span>
+                        <span>Serial Communication</span>
+                        <span>Python</span>
+                        <span>Data Logging</span>
+                    </div>
+                    <button class="btn-expand" onclick="openProjectModal(5)">View Details</button>
+                </div>
+
+                <!-- Project 7: HX711 Load Cell Measurement -->
+                <div class="project-card" data-category="electronics,embedded">
+                    <div class="project-header">
+                        <h3>HX711 Load Cell Measurement System</h3>
+                        <span class="status-badge status-completed">Completed</span>
+                    </div>
+                    <p class="project-description">
+                        Digital weight and force measurement using HX711 amplifier and load cell. Includes calibration 
+                        procedures and digital acquisition for instrumentation applications.
+                    </p>
+                    <div class="project-tech">
+                        <span>HX711</span>
+                        <span>Load Cell</span>
+                        <span>Calibration</span>
+                        <span>Instrumentation</span>
+                        <span>Digital Measurement</span>
+                    </div>
+                    <button class="btn-expand" onclick="openProjectModal(6)">View Details</button>
+                </div>
+
+                <!-- Project 8: LTspice RC Low-Pass Filter -->
+                <div class="project-card" data-category="electronics">
+                    <div class="project-header">
+                        <h3>RC Low-Pass Filter Circuit Simulation</h3>
+                        <span class="status-badge status-completed">Completed</span>
+                    </div>
+                    <p class="project-description">
+                        Circuit design and simulation using LTspice. RC filter analysis including frequency response, 
+                        cutoff frequency, and filter behavior characterization.
+                    </p>
+                    <div class="project-tech">
+                        <span>LTspice</span>
+                        <span>RC Filter</span>
+                        <span>Frequency Response</span>
+                        <span>Analog Circuit Design</span>
+                        <span>Circuit Simulation</span>
+                    </div>
+                    <button class="btn-expand" onclick="openProjectModal(7)">View Details</button>
+                </div>
+
+                <!-- Project 9: Op-Amp Comparator -->
+                <div class="project-card" data-category="electronics">
+                    <div class="project-header">
+                        <h3>Operational Amplifier Comparator Circuit</h3>
+                        <span class="status-badge status-completed">Completed</span>
+                    </div>
+                    <p class="project-description">
+                        Op-amp application for voltage comparison and threshold detection. Demonstrates operational amplifier 
+                        fundamentals and analog signal processing.
+                    </p>
+                    <div class="project-tech">
+                        <span>Op-Amp</span>
+                        <span>Comparator</span>
+                        <span>Analog Electronics</span>
+                        <span>Threshold Detection</span>
+                    </div>
+                    <button class="btn-expand" onclick="openProjectModal(8)">View Details</button>
+                </div>
+
+                <!-- Project 10: Wokwi Logic Gate Lock -->
+                <div class="project-card" data-category="electronics">
+                    <div class="project-header">
+                        <h3>Digital Logic Gate Lock (Wokwi Simulation)</h3>
+                        <span class="status-badge status-completed">Completed</span>
+                    </div>
+                    <p class="project-description">
+                        Digital logic implementation using logic gates for access control. Built and simulated in Wokwi, 
+                        demonstrating Boolean logic and embedded system design fundamentals.
+                    </p>
+                    <div class="project-tech">
+                        <span>Digital Logic</span>
+                        <span>Logic Gates</span>
+                        <span>Boolean Algebra</span>
+                        <span>Wokwi Simulation</span>
+                        <span>Embedded Systems</span>
+                    </div>
+                    <button class="btn-expand" onclick="openProjectModal(9)">View Details</button>
+                </div>
+
+                <!-- Project 11: 2S Battery Management System -->
+                <div class="project-card" data-category="electronics">
+                    <div class="project-header">
+                        <h3>2S Battery Management System</h3>
+                        <span class="status-badge status-prototype">Prototype</span>
+                    </div>
+                    <p class="project-description">
+                        2-cell lithium battery management electronics prototype. Focuses on battery monitoring, protection 
+                        circuits, and power management principles.
+                    </p>
+                    <div class="project-tech">
+                        <span>BMS Electronics</span>
+                        <span>Battery Protection</span>
+                        <span>Power Management</span>
+                        <span>Embedded Systems</span>
+                    </div>
+                    <button class="btn-expand" onclick="openProjectModal(10)">View Details</button>
+                </div>
+
+                <!-- Project 12: 3D Forger -->
+                <div class="project-card" data-category="robotics,electronics">
+                    <div class="project-header">
+                        <h3>3D Forger - Additive Manufacturing</h3>
+                        <span class="status-badge status-in-progress">In Progress</span>
+                    </div>
+                    <p class="project-description">
+                        3D printing and fabrication projects using Bambu Lab A1 Mini. Producing parts and prototypes for 
+                        robotics, electronics, and engineering projects. Focus on practical fabrication for hardware projects.
+                    </p>
+                    <div class="project-tech">
+                        <span>3D Printing</span>
+                        <span>Bambu Lab A1 Mini</span>
+                        <span>Fabrication</span>
+                        <span>Design for Manufacturing</span>
+                        <span>Prototyping</span>
+                    </div>
+                    <button class="btn-expand" onclick="openProjectModal(11)">View Details</button>
                 </div>
             </div>
         </div>
@@ -65,38 +332,78 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2>What I Know</h2>
-            <div class="skills-grid">
-                <div class="skill">HTML & CSS 📝</div>
-                <div class="skill">JavaScript 💻</div>
-                <div class="skill">Figma Design 🎨</div>
-                <div class="skill">Git & GitHub 🐙</div>
-                <div class="skill">Photoshop ✨</div>
-                <div class="skill">Web Design 🌐</div>
-            </div>
-        </div>
-    </section>
+            <h2>Skills & Technologies</h2>
+            
+            <div class="skills-container">
+                <!-- Programming -->
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">C/C++</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">HTML/CSS</span>
+                    </div>
+                </div>
 
-    <!-- Fun Facts Section -->
-    <section id="facts" class="facts">
-        <div class="container">
-            <h2>Fun Facts About Me 😊</h2>
-            <div class="facts-grid">
-                <div class="fact-card">
-                    <h3>🏝️ Sri Lanka</h3>
-                    <p>I'm from the beautiful island of Sri Lanka! It has amazing beaches, mountains, and the coolest culture ever!</p>
+                <!-- Robotics & Embedded -->
+                <div class="skill-category">
+                    <h3>Robotics & Embedded Systems</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Raspberry Pi</span>
+                        <span class="skill-item">Microcontrollers</span>
+                        <span class="skill-item">Robotics</span>
+                        <span class="skill-item">Sensors</span>
+                        <span class="skill-item">Autonomous Systems</span>
+                        <span class="skill-item">Embedded Programming</span>
+                    </div>
                 </div>
-                <div class="fact-card">
-                    <h3>🎮 Gaming</h3>
-                    <p>I love playing games like Minecraft, Fortnite, and mobile games. Games inspire my coding ideas!</p>
+
+                <!-- Electronics -->
+                <div class="skill-category">
+                    <h3>Electronics & Hardware</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Analog Electronics</span>
+                        <span class="skill-item">Digital Logic</span>
+                        <span class="skill-item">Circuit Design</span>
+                        <span class="skill-item">Load Cells & Sensors</span>
+                        <span class="skill-item">DACs & ADCs</span>
+                        <span class="skill-item">Power Management</span>
+                    </div>
                 </div>
-                <div class="fact-card">
-                    <h3>📚 Learning</h3>
-                    <p>I'm always learning new things! YouTube tutorials are my best friend. Coding every day makes me better!</p>
+
+                <!-- AI & Computer Vision -->
+                <div class="skill-category">
+                    <h3>AI & Computer Vision</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">Computer Vision</span>
+                        <span class="skill-item">Machine Learning</span>
+                        <span class="skill-item">Image Processing</span>
+                        <span class="skill-item">Autonomous Decision-Making</span>
+                    </div>
                 </div>
-                <div class="fact-card">
-                    <h3>🎵 Music</h3>
-                    <p>I love listening to music while coding. It helps me focus and makes the coding sessions more fun!</p>
+
+                <!-- Tools & Software -->
+                <div class="skill-category">
+                    <h3>Tools & Software</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">LTspice</span>
+                        <span class="skill-item">Wokwi</span>
+                        <span class="skill-item">Bambu Studio</span>
+                        <span class="skill-item">Git/GitHub</span>
+                        <span class="skill-item">Data Visualization</span>
+                        <span class="skill-item">Serial Communication</span>
+                    </div>
+                </div>
+
+                <!-- Fabrication -->
+                <div class="skill-category">
+                    <h3>Fabrication & Manufacturing</h3>
+                    <div class="skills-list">
+                        <span class="skill-item">3D Printing</span>
+                        <span class="skill-item">Design for Manufacturing</span>
+                        <span class="skill-item">Prototyping</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,29 +412,42 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Get In Touch! 💬</h2>
-            <p>Have a cool project idea or just want to chat about tech? Send me a message!</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message (tell me what's up!)" rows="5" required></textarea>
-                <button type="submit" class="submit-button">Send! 🚀</button>
-            </form>
+            <h2>Get In Touch</h2>
+            <p>Interested in robotics, embedded systems, or electronics? Let's connect.</p>
+            
+            <div class="contact-content">
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Your Name" required aria-label="Name">
+                    <input type="email" placeholder="Your Email" required aria-label="Email">
+                    <textarea placeholder="Your Message" rows="6" required aria-label="Message"></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+
+                <div class="contact-links">
+                    <h3>Connect</h3>
+                    <a href="https://github.com/Genuka" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <span class="link-icon">→</span> GitHub
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Genuka. All rights reserved. 🇱🇰</p>
-            <div class="social-links">
-                <a href="https://github.com" target="_blank">🐙 GitHub</a> | 
-                <a href="https://linkedin.com" target="_blank">💼 LinkedIn</a> | 
-                <a href="https://twitter.com" target="_blank">🐦 Twitter</a>
-            </div>
-            <p style="margin-top: 1rem; font-size: 0.9rem;">Made with ❤️ by a 13-year-old from Sri Lanka 🌴</p>
+            <p>&copy; 2026 Genuka Giyon. All rights reserved.</p>
+            <p class="footer-subtitle">Engineering & Robotics Portfolio</p>
         </div>
     </footer>
+
+    <!-- Project Details Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProjectModal()">×</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
