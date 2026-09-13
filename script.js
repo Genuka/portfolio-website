@@ -12,27 +12,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact form submission
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form values
-    const name = this.querySelector('input[type="text"]').value;
-    const email = this.querySelector('input[type="email"]').value;
-    const message = this.querySelector('textarea').value;
-    
-    // Validate form
-    if (name && email && message) {
-        // Show success message
-        alert(`Thanks ${name}! Your message has been sent. I'll get back to you soon!`);
-        
-        // Reset form
-        this.reset();
-    } else {
-        alert('Please fill in all fields');
-    }
-});
-
 // Add scroll animation for elements
 const observerOptions = {
     threshold: 0.1,
@@ -92,7 +71,6 @@ filterButtons.forEach(button => {
 // Project Modal Functionality
 const modal = document.getElementById('projectModal');
 const modalBody = document.getElementById('modalBody');
-const modalClose = document.querySelector('.modal-close');
 
 const projectData = [
     {
@@ -124,13 +102,6 @@ const projectData = [
         technologies: ["Voltage Divider", "Current Sensing", "Microcontroller", "Python", "Data Visualization"]
     },
     {
-        title: "5-bit R-2R Resistor Ladder DAC",
-        status: "Completed",
-        description: "Digital-to-analog converter implementation using R-2R resistor ladder network. 5-bit digital input with GPIO control. Demonstrates resistor networks and analog electronics fundamentals.",
-        details: "A precision analog circuit implementation showcasing fundamental electronics principles. The R-2R ladder network provides excellent linearity and accuracy. The system interfaces with GPIO pins for digital control and produces a clean analog output suitable for various applications.",
-        technologies: ["R-2R Ladder", "DAC", "GPIO", "Analog Electronics", "Resistor Networks"]
-    },
-    {
         title: "DHT11 Temperature/Humidity Data Logger",
         status: "Completed",
         description: "Environmental data acquisition system using DHT11 sensor. Microcontroller-based acquisition with serial communication to Python for data logging and monitoring.",
@@ -150,20 +121,6 @@ const projectData = [
         description: "Circuit design and simulation using LTspice. RC filter analysis including frequency response, cutoff frequency, and filter behavior characterization.",
         details: "An educational circuit analysis project using professional simulation tools. Demonstrates frequency response analysis, bode plots, and filter behavior. Perfect for understanding analog filter design principles and their practical applications.",
         technologies: ["LTspice", "RC Filter", "Frequency Response", "Analog Circuit Design", "Circuit Simulation"]
-    },
-    {
-        title: "Operational Amplifier Comparator Circuit",
-        status: "Completed",
-        description: "Op-amp application for voltage comparison and threshold detection. Demonstrates operational amplifier fundamentals and analog signal processing.",
-        details: "A foundational op-amp circuit that uses operational amplifiers for analog signal comparison. The circuit detects when input voltages exceed specified thresholds, useful for sensor interfacing and signal processing applications.",
-        technologies: ["Op-Amp", "Comparator", "Analog Electronics", "Threshold Detection"]
-    },
-    {
-        title: "Digital Logic Gate Lock (Wokwi Simulation)",
-        status: "Completed",
-        description: "Digital logic implementation using logic gates for access control. Built and simulated in Wokwi, demonstrating Boolean logic and embedded system design fundamentals.",
-        details: "A digital logic system designed using fundamental logic gates to create an access control mechanism. Simulated in Wokwi for verification and testing. Demonstrates practical applications of Boolean algebra and combinatorial logic design.",
-        technologies: ["Digital Logic", "Logic Gates", "Boolean Algebra", "Wokwi Simulation", "Embedded Systems"]
     },
     {
         title: "2S Battery Management System",
