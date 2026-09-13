@@ -416,12 +416,47 @@
             <p>Interested in robotics, embedded systems, or electronics? Let's connect.</p>
             
             <div class="contact-content">
-                <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Your Name" required aria-label="Name">
-                    <input type="email" placeholder="Your Email" required aria-label="Email">
-                    <textarea placeholder="Your Message" rows="6" required aria-label="Message"></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                <div>
+                    <div data-fs-success class="form-success" style="display: none;">
+                        <p><strong>✓ Thank you!</strong> Your message has been sent successfully. I'll get back to you soon.</p>
+                    </div>
+                    <div data-fs-error class="form-error" style="display: none;">
+                        <p><strong>✗ Oops!</strong> There was an error submitting the form. Please try again.</p>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <input 
+                            type="text" 
+                            name="name"
+                            placeholder="Your Name" 
+                            required 
+                            aria-label="Name"
+                            data-fs-field
+                        >
+                        <span data-fs-error="name" class="field-error"></span>
+
+                        <input 
+                            type="email" 
+                            name="email"
+                            placeholder="Your Email" 
+                            required 
+                            aria-label="Email"
+                            data-fs-field
+                        >
+                        <span data-fs-error="email" class="field-error"></span>
+
+                        <textarea 
+                            name="message"
+                            placeholder="Your Message" 
+                            rows="6" 
+                            required 
+                            aria-label="Message"
+                            data-fs-field
+                        ></textarea>
+                        <span data-fs-error="message" class="field-error"></span>
+
+                        <button type="submit" class="btn btn-primary" data-fs-submit-btn>Send Message</button>
+                    </form>
+                </div>
 
                 <div class="contact-links">
                     <h3>Connect</h3>
@@ -448,6 +483,13 @@
             <div id="modalBody"></div>
         </div>
     </div>
+
+    <!-- Formspree Script -->
+    <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#contactForm', formId: 'xjyvqklz' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
     <script src="script.js"></script>
 </body>
